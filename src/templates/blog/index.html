@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{blog_post.title}}</title>
+</head>
+<body>
+    {% for blog_post in posts %}
+    {% with categories_count=blog_post.category.count %}
+        <a href="{% url 'blog-post' slug=blog_post.slug %}">
+            <h3>{{forloop.counter}} - {{blog_post.title}} - ({{categories_count}})</h3>
+        </a>
+    <small>Cet article est présent dans {{ categories_count }} catégories</small>
+    {% endwith %}
+    {% endfor %}
+    <hr>
+</body>
+</html>

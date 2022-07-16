@@ -1,31 +1,45 @@
- <header>
+
+<header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
-      <div class="container">
-        <a href="#" class="navbar-brand">TG<span class="text-primary">OPEN</span><span class="text-warning">TRANSPORT</span></a>
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand text-danger" >TG<span class="" style="color:#ebc400">OPEN</span><span class="text-success">TRANSPORT</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="navbar-collapse collapse" id="navbarContent">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto ml-lg-6">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Acceuil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="#">Jeux de données</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#">Thèmes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentation</a>
+            </li>
+            <!--<li class="nav-item">
               <a class="nav-link" href="service.html">Services</a>
-            </li>
+            </li> !-->
             <li class="nav-item">
               <a class="nav-link" href="blog.html">Blog</a>
             </li>
+            <!--
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
+            </li> !-->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">A propos</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
+              <a class="nav-link text-primary font-weight-lighter ml-lg-2" href="{% url 'login' %}">Se connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary font-weight-lighter ml-lg-2" href="/register">Créer un compte</a>
             </li>
           </ul>
         </div>

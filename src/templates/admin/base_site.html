@@ -1,0 +1,32 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block branding %}
+<h1>Mon super Blog</h1>
+{%endblock%}
+
+{% block extrastyle %}
+{% comment %}
+<style>
+  #header {
+    background-color: #1e1e2d;
+  }
+
+  #branding h1 {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  body {
+    background-color: #3b3b4c;
+  }
+
+  #content h1 {
+    color: white;
+  }
+</style>
+{% endcomment %}
+{%endblock%}

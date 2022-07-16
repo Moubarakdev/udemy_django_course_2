@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{post.title}}</title>
+</head>
+<body>
+<a href="{% url 'blog-index' %}">retour au sommaire</a>
+    <h1>{{ post.title}}</h1>
+    <p>{{post.content}}</p>
+</body>
+</html>
