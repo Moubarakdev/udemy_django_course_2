@@ -15,13 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import blog_post, blog_posts, signup, blog_form_post
+from blog.views import blog_post, blog_posts, signup, blog_post_create, BlogIndexView, BlogPostDetailView, \
+    BlogPostCreateView, BlogPostUpdateView, BlogPostDeleteView
+from .views import HomeView
 
 urlpatterns = [
     path('custom-admin/', admin.site.urls),
+    path('', HomeView.as_view(title="Acceuil du site"), name="home"),
+    path('about/', HomeView.as_view(title="à propos"), name="about"),
     #path('', include("home.urls")),
-    path('blog/', blog_posts, name="blog-index"),
-    path('blog/<str:slug>', blog_post, name='blog-post'),
-    path('blog/create/', blog_form_post, name='blog-create'),
+    path('blog/', BlogIndexView.as_view(), name="blog-index"),
+    path('blog/<str:slug>', BlogPostDetailView.as_view(), name='blog-post-detail'),
+    path('blog/create/', BlogPostCreateView.as_view(), name='blog-post-create'),
     path('signup/', signup, name='signup'),
+    path('blog/<str:slug>/edit/', BlogPostUpdateView.as_view(), name='blog-post-edit'),
+    path('blog/<str:slug>/delete/', BlogPostDeleteView.as_view(), name='blog-post-delete'),
 ]

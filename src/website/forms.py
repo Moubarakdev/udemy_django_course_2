@@ -24,7 +24,7 @@ class SignupForm(forms.Form):
 class BlogPostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
-        fields ="__all__"
+        fields = "__all__"
         labels = {"title": "Titre",
                   "category": "Catégorie",
                   "author": "Auteur"}

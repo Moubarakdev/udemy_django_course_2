@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>{{blog_post.title}}</title>
-</head>
-<body>
-    {% for blog_post in posts %}
-    {% with categories_count=blog_post.category.count %}
-        <a href="{% url 'blog-post' slug=blog_post.slug %}">
-            <h3>{{forloop.counter}} - {{blog_post.title}} - ({{categories_count}})</h3>
+{% extends 'blog/base.html' %}
+
+{% block title %} <title>Le blog</title> {% endblock %}
+
+{% block content %}
+
+    <h1>{{ page_name }}</h1>
+
+    <a href="{% url 'blog-post-create' %}">
+        Ajouter un article
+    </a>
+
+    {% for post in posts %}
+        <a href="{% url 'blog-post-detail' slug=post.slug %}">
+            <h3>{{ post.title }}</h3>
         </a>
-    <small>Cet article est présent dans {{ categories_count }} catégories</small>
-    {% endwith %}
+        <p>{{ post.content|truncatewords:20|striptags|safe }}</p>
     {% endfor %}
-    <hr>
-</body>
-</html>
+{% endblock %}
